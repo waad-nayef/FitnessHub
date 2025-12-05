@@ -146,10 +146,10 @@ body {
   color: var(--color-primary-text) !important;
 }
 
-.nav {
+nav{
   width: 100%;
   position: fixed !important;
-  border-bottom: solid var(--color-card-bg) 0.5px !important;
+  border-bottom: solid var(--color-card-bg) 1px !important;
   background: var(--color-page-bg);
   z-index: 9999 !important;
 }
