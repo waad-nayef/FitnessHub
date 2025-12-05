@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Start Global Rules*/
+:root {
+  --color-primary-text: #222831;
+  --color-secondary-text: #393e46;
+  --color-accent: #00adb5;
+  --color-card-bg: #eeeeee;
+  --color-card-bg-transparent: rgba(238, 238, 238, 0.50);
+  --color-page-bg: #ffffff;
+  --hover-color: #02676b;
+  --border-color: #D9D9D9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-page-bg);
+  color: var(--color-primary-text);
+}
+
+/* Cards & Boxes */
+.card,
+.box,
+.form-container {
+  background-color: var(--color-card-bg);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/* Primary Buttons */
+.btn-primary {
+  background-color: var(--color-accent);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+/* Secondary Text */
+.text-secondary {
+  color: var(--color-secondary-text);
+}
+
+/* Borders */
+.border-main {
+  border: 1px solid var(--color-primary-text);
+}
+
+/* End Global Rules*/
+
+/* Start container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Medium devices */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Large devices */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* X-Large devices */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End container */
+/* 
+.home-header {
+  height: 100px;
+  padding: 20px;
+  color: var(--color-secondary-text);
+}
+
+.home-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.home-header .logo .logo-image {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.home-header .logo span {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.home-header ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.home-header li a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 25px;
+  color: var(--color-secondary-text);
+}
+
+.home-landing {
+  height: calc(100vh - 100px);
+  background-image: url(../images/blured-home-image.png);
+} */
+
+/* Navbar */
+.logo-img {
+  width: 70px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-family: "Outfit", sans-serif;
+  color: var(--color-primary-text) !important;
+}
+
+.nav {
+  width: 100%;
+  position: fixed !important;
+  border-bottom: solid var(--color-card-bg) 0.5px !important;
+  background: var(--color-page-bg);
+  z-index: 9999 !important;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: right;
+  width: 96%;
+  gap: 5%;
+}
+
+.nav-link {
+  font-family: "Inter", sans-serif;
+  color: var(--color-primary-text) !important;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600 !important;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  color: var(--color-accent) !important;
+}
+
+.nav-link::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-accent);
+  transition: 200ms ease-out;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* sign up page */
+
+.info label {
+  color: var(--color-secondary-text);
+  font-size: smaller;
+}
+
+.info input {
+  border-radius: 5px;
+  border: solid 1px;
+  margin-bottom: 10px;
+  width: 115%;
+  height: 25px;
+}
+
+.login-header .container img {
+  width: 70px;
+  height: 70px;
+}
+
+.signUp-photo img {
+  width: 400px;
+  height: 400px;
+}
+
+.sign-up-landing .container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sign-up button {
+  width: 115%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 3px;
+  height: 27px;
+  font-size: small;
+  font-weight: bolder;
+}
+
+.sign-up p {
+  font-size: smaller;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .signUp-photo img {
+    width: 300px;
+    height: 300px;
+  }
+}

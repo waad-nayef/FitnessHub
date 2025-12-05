@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile | FitnessHub</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- css files -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/user.css" />
+
+    <!-- normalize file -->
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!--EDIT USER INFORMATION PAGE (NO.10) Mohammad Alqaisi  -->
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg -transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-text" href="userhome.html"><img src="../images/logo.png" class="logo-img"
+                    alt="FitnessHub">FitnessHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-links">
+                    <a class="nav-link active fs-6" href="userhome.html">Home</a>
+                    <a class="nav-link active fs-6" href="userpage.html">Forms</a>
+                    <a class="nav-link active fs-6" href="userinfo.html">Edit Profile</a>
+                    <a class="nav-link active fs-6" href="../public-pages/index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Edit Profile Section -->
+    <section class="user-info py-4">
+        <div class="container">
+            <h1 class="page-title mb-3">Edit Profile</h1>
+
+            <div class="profile-card">
+                <!-- Header (Name + Email) -->
+                <div class="profile-header mb-4">
+                    <h2 class="profile-name" id="profileName">User Name</h2>
+                    <p class="profile-email text-secondary" id="profileEmail">
+                        user@example.com
+                    </p>
+                </div>
+
+                <!-- Edit Form -->
+                <form id="editProfileForm" class="profile-form">
+                    <div class="row g-4">
+                        <div class="col-lg-6 col-md-12">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" id="fullName" class="form-control fh-input" placeholder="Your full name"
+                                required />
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control fh-input"
+                                placeholder="New password (optional)" />
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control fh-input"
+                                placeholder="Your email address" required />
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control fh-input"
+                                placeholder="Confirm new password" />
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control fh-input" placeholder="07XXXXXXXX" />
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="d-flex justify-content-end mt-4 gap-3">
+                        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" id="cancelBtn">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- End Edit Profile Section -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- User Edit Logic -->
+    <script src="../js/user.js"></script>
+</body>
+
+</html>

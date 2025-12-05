@@ -1,0 +1,76 @@
+@import url("style.css");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.user-info {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary-text);
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+/* ======= Page Title ======= */
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary-text);
+  font-family: "Outfit", sans-serif;
+}
+
+/* ======= Profile Card ======= */
+.profile-card {
+  background-color: var(--color-card-bg-transparent);
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  padding: 24px 28px 28px;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  font-size: 0.9rem;
+}
+
+/* ======= Inputs ======= */
+.fh-input {
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.85rem;
+}
+
+.fh-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 0.15rem rgba(0, 173, 181, 0.15);
+}
+
+/* ======= Buttons ======= */
+.btn-primary {
+  background-color: var(--color-accent) !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.btn-outline-secondary {
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 18px 16px 22px;
+  }
+}
