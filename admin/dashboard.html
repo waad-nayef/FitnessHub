@@ -9,14 +9,17 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/admin.css" />
   <!-- normalize file -->
-      <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/normalize.css" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/8bb0a97d35.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
-<body>
+<body onload="dashboard()">
   <!--DASHBOARD PAGE (NO.4) Waad -->
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg -transparent">
@@ -40,9 +43,92 @@
   <!-- End Navbar -->
   <!-- Start admin-dashboard Section -->
   <section class="admin-dashboard">
-    <div class="container"></div>
+    <div class="container">
+      <div class="statistics">
+
+        <div class="dashboard-card card" id="total-forms">
+          <div class="card-counter">21</div>
+
+          <div class="card-row">
+            <div id="forms-indicator"></div>
+
+            <div class="card-text">
+              Total Forms
+              <span class="card-period">Last 7 days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card card" id="total-coaches">
+          <div class="card-counter">21</div>
+
+          <div class="card-row">
+            <div id="coaches-indicator"></div>
+
+            <div class="card-text">
+              Total Coaches
+              <span class="card-period">Last 7 days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card card" id="total-avg">
+          <div class="card-counter"></div>
+
+          <div class="card-row">
+            <div></div>
+            <div class="card-text">
+              Forms Average
+              <span class="card-period"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card card" id="inactive-forms">
+          <div class="card-counter"></div>
+          <div class="card-row">
+            <div></div>
+            <div class="card-text">
+              Deactivated Forms
+              <span class="card-period"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="forms">
+        <!-- Coaches Table Card -->
+        <div class="card coaches-card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-borderless align-middle mb-0 coaches-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-muted small">ID</th>
+                    <th scope="col" class="text-muted small">Title</th>
+                    <th scope="col" class="text-muted small">Status</th>
+                    <th scope="col" class="text-muted small">Questions</th>
+                    <th scope="col" class="text-muted small">Date</th>
+                    <th scope="col" class="text-muted small">Highest Score</th>
+                    <th scope="col" class="text-muted small">Average</th>
+                    <th scope="col" class="text-muted small">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="formsTableBody">
+                  <!-- Dynamic rows injected from admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- End admin-dashboard Section -->
+  <script src="../js/admin.js"></script>
 </body>
 
 </html>

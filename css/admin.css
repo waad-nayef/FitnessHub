@@ -18,6 +18,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    background-color: var(--color-card-bg);
 }
 
 .coaches-table tbody tr {
@@ -50,4 +51,162 @@
 .btn-outline-accent:hover {
     background-color: var(--color-accent);
     color: #ffffff;
+}
+
+
+/* ADMIN DASHBOARD - WAAD */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90vw;
+    margin: auto;
+}
+
+.admin-dashboard {
+    padding-top: 20vh;
+}
+
+.admin-dashboard .statistics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-dashboard .dashboard-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 250px;
+    height: 150px;
+    padding: 10px;
+    align-items: center;
+    background-color: var(--color-card-bg);
+}
+
+.admin-dashboard .card-counter {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1;
+    /* prevents overflow */
+}
+
+.admin-dashboard .card-row {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.admin-dashboard #forms-indicator,
+.admin-dashboard #coaches-indicator {
+    padding: 5px 10px;
+    border-radius: 9999px;
+}
+
+.admin-dashboard .card-text {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.admin-dashboard .card-period {
+    display: block;
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+#form-delete,
+#form-edit,
+#form-change-status {
+    padding: 5px 10px;
+    border-radius: 99px;
+    color: white;
+}
+
+#form-delete {
+    background-color: #FC0000;
+}
+
+#form-edit {
+    background-color: #FFAF15;
+}
+
+/* ADMIN FORM RESULTS - WAAD */
+
+.admin-form-results {
+    display: flex;
+    margin: auto;
+    width: 95vw;
+    padding-top: 20vh;
+    justify-content: space-around;
+    justify-items: center;
+    gap: 30px;
+}
+
+#form-overview,
+#submissions {
+    width: 50%;
+    background: var(--color-card-bg);
+    border: solid 1px var(--border-color);
+    border-radius: 10px;
+    padding: 5px 10px;
+    height: 75vh;
+}
+
+.form-results-card-title {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.title-and-activation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.form-switch {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.form-check-input {
+    height: 20px !important;
+    width: 35px !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem var(--color-accent) !important;
+
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--color-accent-rgb), 0.5) !important;
+}
+
+.overview-statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    font-family: "Inter", sans-serif;
+}
+
+.overview-statistics .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    font-family: "Inter", sans-serif;
 }
