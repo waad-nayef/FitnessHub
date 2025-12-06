@@ -272,9 +272,14 @@ nav {
   text-align: center;
   width: 60%;
   font-weight: 700;
+  font-size: larger;
 }
 .home-landing .container h1 {
   font-weight: 900;
+  font-size: 40px;
+}
+.home-landing .container p {
+  margin-bottom: 30px;
 }
 .color-text {
   color: var(--color-accent);
@@ -285,7 +290,7 @@ nav {
   color: white;
   font-size: small;
   padding: 6px 20px;
-  margin: 10px;
+  margin: 15px;
   border-radius: 5px;
   text-decoration: none;
 }
@@ -294,11 +299,46 @@ nav {
   color: white !important;
   font-size: small;
   padding: 8px 20px;
-  margin: 10px;
+  margin: 15px;
   text-decoration: none;
 }
 @media (max-width: 768px) {
   .home-landing .container {
     width: 100%;
+  }
+}
+
+/*----------------------------------------------*/
+.about-section {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: var(--color-card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}
+
+.about-section li {
+  margin-bottom: 8px;
+  color: var(--color-secondary-text);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+  .about-section {
+    width: 90%;
   }
 }
