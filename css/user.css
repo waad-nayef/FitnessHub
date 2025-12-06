@@ -1,7 +1,61 @@
 @import url("style.css");
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+/************ Start User Page **********************/
+/* Start user-landing */
+.user-landing {
+  height: calc(100vh);
+  padding: 20px;
+  padding-top: 120px;
+}
+.user-landing .container {
+  display: flex;
+}
+/* Start available-forms  */
+.user-landing .container .available-forms {
+  flex-grow: 3;
+  margin-right: 10px;
+}
+.user-landing .container .available-forms h2 {
+  margin-bottom: 20px;
+}
+.user-landing .container .available-forms .user-forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.user-landing .container .available-forms .user-forms div {
+  /* padding-right: 20px; */
+  min-width: 220px;
+  background-color: var(--color-card-bg-transparent) !important ;
+}
+.user-landing .container .available-forms .user-forms h5 {
+  margin-bottom: 20px;
+}
+.user-landing .container .available-forms .user-forms p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.user-landing .container .available-forms .user-forms .user-form-btn {
+  width: fit-content;
+  margin: auto;
+  padding: 5px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+/* End available-forms  */
+/* Start previous-forms  */
+.user-landing .container .previous-forms {
+  flex-grow: 2;
+}
+.user-landing .container .previous-submission {
+  background-color: var(--color-card);
+}
+/* End previous-forms  */
+/************ End User Page **********************/
+
+/************ Start User info **********************/
 .user-info {
   height: 85vh;
   display: flex;
@@ -67,10 +121,10 @@
   border-radius: 999px;
   font-weight: 500;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .profile-card {
     padding: 18px 16px 22px;
   }
 }
+/************ End User info **********************/

@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif !important;
   background-color: var(--color-page-bg);
   color: var(--color-primary-text);
 }
@@ -27,7 +27,7 @@ body {
 .card,
 .box,
 .form-container {
-  background-color: var(--color-card-bg);
+  background-color: var(--color-card-bg) !important;
   border-radius: 10px;
   padding: 16px;
 }
@@ -297,8 +297,8 @@ nav {
   margin: 10px;
   text-decoration: none;
 }
-@media (max-width: 768px){
-  .home-landing .container{
+@media (max-width: 768px) {
+  .home-landing .container {
     width: 100%;
   }
 }
