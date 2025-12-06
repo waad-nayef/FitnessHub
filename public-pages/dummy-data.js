@@ -67,7 +67,7 @@ const forms = [
     formId: "f2",
     title: "Advanced Training Quiz",
     description: "Challenge your advanced fitness knowledge.",
-    status: "active",
+    status: "inactive",
     createdAt: "22-11-2025",
     average: 90, //out of 100%
     noOfSubmission: 40,
