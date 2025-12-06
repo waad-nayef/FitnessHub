@@ -1,212 +1,1049 @@
 @import url("style.css");
 
-/* ======= Page Title ======= */
+/* ======================================
+   GENERAL PAGE ELEMENTS
+   ====================================== */
+
 .page-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--color-primary-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary-text);
 }
 
-/* ======= Coaches Card & Table ======= */
-.coaches-card {
-    border-radius: 16px;
-    background-color: #ffffff;
-    border: 1px solid var(--border-color);
-}
-
-.coaches-table thead tr th {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    background-color: var(--color-card-bg);
-}
-
-.coaches-table tbody tr {
-    border-bottom: 1px solid #f2f2f2;
-}
-
-.coaches-table tbody tr:last-child {
-    border-bottom: none;
-}
-
-.coaches-table tbody td {
-    font-size: 0.9rem;
-    color: var(--color-secondary-text);
-}
-
-.coaches-table tbody tr:hover {
-    background-color: #fafafa;
-}
-
-/* Outline accent button used for "Show All" */
-.btn-outline-accent {
-    border-radius: 999px;
-    border: 1px solid var(--color-accent);
-    color: var(--color-accent);
-    background-color: #ffffff;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.btn-outline-accent:hover {
-    background-color: var(--color-accent);
-    color: #ffffff;
-}
-
-
-/* ADMIN DASHBOARD - WAAD */
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 90vw;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90vw;
+  margin: auto;
 }
 
-.admin-dashboard {
-    padding-top: 20vh;
-}
+/* ======================================
+   CARDS & STATISTICS
+   ====================================== */
 
-.admin-dashboard .statistics {
-    display: flex;
-    justify-content: space-between;
+.dashboard-card {
+  background-color: var(--color-card-bg);
+  border-radius: 10px;
+  padding: 16px;
 }
 
 .admin-dashboard .dashboard-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    width: 250px;
-    height: 150px;
-    padding: 10px;
-    align-items: center;
-    background-color: var(--color-card-bg);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 250px;
+  height: 150px;
+  padding: 10px;
+  align-items: center;
 }
 
 .admin-dashboard .card-counter {
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 1;
-    /* prevents overflow */
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .admin-dashboard .card-row {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .admin-dashboard #forms-indicator,
 .admin-dashboard #coaches-indicator {
-    padding: 5px 10px;
-    border-radius: 9999px;
+  padding: 5px 10px;
+  border-radius: 9999px;
 }
 
 .admin-dashboard .card-text {
-    font-size: 14px;
-    opacity: 0.9;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
 .admin-dashboard .card-period {
-    display: block;
-    font-size: 11px;
-    opacity: 0.6;
-    margin-top: 2px;
+  display: block;
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 2px;
 }
 
+.overview-statistics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+}
+
+.overview-statistics .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-card-bg);
+}
+
+.overview-statistics .card .card-count {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.overview-statistics .card .card-text {
+  font-weight: 600;
+}
+
+/* ======================================
+   TABLES
+   ====================================== */
+
+.coaches-card {
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+}
+
+.coaches-table thead tr th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: var(--color-card-bg);
+  border: solid 1px var(--border-color);
+}
+
+.coaches-table tbody tr {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.coaches-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.coaches-table tbody td {
+  font-size: 0.9rem;
+  color: var(--color-secondary-text);
+  border: solid 1px var(--border-color);
+}
+
+.coaches-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.submissions-table thead tr th {
+  background-color: var(--color-card-bg-transparent);
+}
+
+/* ======================================
+   BUTTONS
+   ====================================== */
+
+.btn-outline-accent {
+  border-radius: 999px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-back {
+  all: unset;
+  background-color: var(--color-accent);
+  padding: 8px 25px;
+  color: white;
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.btn-back:hover {
+  background-color: var(--hover-color);
+}
+
+/* ======================================
+   FORM ACTIONS
+   ====================================== */
+
 .form-actions {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.form-actions .action-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 300ms;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.btn-delete {
+  background-color: #FC0000;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+  transform: translateY(-1px);
+}
+
+.btn-edit {
+  background-color: #FFAF15;
+}
+
+.btn-edit:hover {
+  background-color: #e69d00;
+  transform: translateY(-1px);
+}
+
+.btn-toggle {
+  background-color: #4E535A;
+}
+
+.btn-toggle:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 #form-delete,
 #form-edit,
 #form-change-status {
-    padding: 5px 10px;
-    border-radius: 99px;
-    color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 300ms;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 #form-delete {
-    background-color: #FC0000;
+  background-color: #FC0000;
+}
+
+#form-delete:hover {
+  background-color: #cc0000;
 }
 
 #form-edit {
-    background-color: #FFAF15;
+  background-color: #FFAF15;
 }
 
-/* ADMIN FORM RESULTS - WAAD */
+#form-edit:hover {
+  background-color: #e69d00;
+}
+
+/* ======================================
+   ADMIN DASHBOARD
+   ====================================== */
+
+.admin-dashboard {
+  padding-top: 20vh;
+}
+
+.admin-dashboard .statistics {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* ======================================
+   ADMIN FORM RESULTS & CREATE FORM
+   ====================================== */
 
 .admin-form-results {
-    display: flex;
-    margin: auto;
-    width: 95vw;
-    padding-top: 20vh;
-    justify-content: space-around;
-    justify-items: center;
-    gap: 30px;
+  display: flex;
+  margin: auto;
+  width: 95vw;
+  padding-top: 15vh;
+  justify-content: space-around;
+  gap: 30px;
 }
 
 #form-overview,
-#submissions {
-    width: 50%;
-    background: var(--color-card-bg);
-    border: solid 1px var(--border-color);
-    border-radius: 10px;
-    padding: 5px 10px;
-    height: 75vh;
+#submissions,
+#form-inputs,
+#questions,
+#submission-view {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  background: var(--color-card-bg-transparent);
+  border: solid 1px var(--border-color);
+  border-radius: 10px;
+  padding: 10px;
+  height: 80vh;
+  overflow: auto;
+}
+
+#submission-view {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#questions {
+  align-items: center;
+}
+
+.form-results-card-title,
+.form-create-card-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .form-results-card-title {
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5em;
-    font-weight: 500;
+  align-self: flex-start;
 }
 
-.title-and-activation {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.title-and-settings,
+.title-and-activate {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.modification-settings {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+#form-overview-edit-btn {
+  all: unset;
+  background-color: var(--color-accent);
+  padding: 3px 20px;
+  color: var(--color-page-bg);
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+#form-overview-edit-btn:hover {
+  background-color: var(--hover-color);
+}
+
+/* ======================================
+   FORM FIELDS & INPUTS
+   ====================================== */
 
 .form-switch {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 
-.form-check-input {
-    height: 20px !important;
-    width: 35px !important;
+.form-check-input,
+.question-required {
+  height: 20px !important;
+  width: 35px !important;
 }
 
 .form-check-input:checked {
-    background-color: var(--color-accent) !important;
-    border-color: var(--color-accent) !important;
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
 }
 
 .form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem var(--color-accent) !important;
-
+  box-shadow: 0 0 0 0.25rem rgba(0, 173, 181, 0.5) !important;
 }
 
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(var(--color-accent-rgb), 0.5) !important;
+.form-title .form-title-label,
+.question-title-label,
+.question-input,
+.form-description .form-description-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
 }
 
-.overview-statistics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    font-family: "Inter", sans-serif;
+.form-title .form-title-text,
+.form-description .form-description-text {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background: var(--color-card-bg);
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 1px var(--border-color);
 }
 
-.overview-statistics .card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 90%;
-    font-family: "Inter", sans-serif;
+#form-title-input,
+#form-description-input,
+#question-preview,
+#question-text,
+#question-short-ans,
+#question-text-input,
+#mark-input,
+#select-input,
+#entered-select-input {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 1px var(--border-color);
+  height: 40px;
+  padding: 10px;
+}
+
+#form-description-input {
+  height: 200px;
+}
+
+#question-preview {
+  background-color: var(--color-card-bg);
+  height: 20vh;
+}
+
+#question-text {
+  height: 20vh;
+}
+
+#entered-select-input {
+  background-color: var(--border-color);
+}
+
+#select-input {
+  width: 80%;
+}
+
+/* ======================================
+   FORM BUTTONS
+   ====================================== */
+
+.create-form-buttons,
+.create-question-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.create-form-buttons button,
+.create-question-buttons button,
+#add-question-btn,
+#add-option-btn {
+  all: unset;
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#create-form-btn,
+#add-question-btn,
+#add-option-btn {
+  background-color: var(--color-accent);
+  color: var(--color-page-bg);
+  font-weight: 500;
+  transition: 700ms;
+  border: solid 0.5px var(--border-color);
+}
+
+#create-form-btn:hover,
+#add-question-btn:hover,
+#add-option-btn:hover {
+  background-color: var(--hover-color);
+}
+
+#cancel-btn {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 500;
+  transition: 400ms;
+}
+
+#cancel-btn:hover {
+  border: 2px solid var(--color-secondary-text);
+  background-color: var(--color-card-bg);
+  color: var(--color-secondary-text);
+}
+
+#remove-option-btn {
+  all: unset;
+  color: #FC0000;
+  border: solid 2px #FC0000;
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#remove-option-btn:hover {
+  background-color: #FC0000;
+  color: white;
+}
+
+#add-question-btn {
+  align-self: flex-end;
+}
+
+/* ======================================
+   QUESTIONS
+   ====================================== */
+
+#no-question-label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--border-color);
+  text-align: center;
+  padding: 20px;
+}
+
+.question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--color-page-bg);
+  border-radius: 10px;
+  border: solid 1px var(--border-color);
+  padding: 15px;
+  width: 100%;
+}
+
+.question-number {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-secondary-text);
+}
+
+.question-text {
+  font-family: "Inter", sans-serif;
+  color: var(--color-secondary-text);
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+#question-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#question-choices label {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--color-secondary-text);
+  cursor: pointer;
+  word-wrap: break-word;
+}
+
+/* ======================================
+   QUESTION CREATION DIALOG
+   ====================================== */
+
+.main-controllers,
+.formatting-and-preview {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.formatting {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 200px;
+}
+
+.formatting-btns {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.formatting-btns button {
+  all: unset;
+  font-weight: 600;
+  border: solid 3px var(--color-accent);
+  color: var(--color-accent);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.formatting-btns button:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+#font-options,
+#question-type {
+  border: solid 1px var(--border-color);
+  border-radius: 10px;
+  color: var(--color-secondary-text);
+  width: 100%;
+  height: 40px;
+  outline: none;
+  padding: 5px 10px;
+}
+
+.type-and-mark {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.font-type-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.enter-choices-select {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+#option-input {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ======================================
+   SWEETALERT CUSTOM STYLES
+   ====================================== */
+
+.swal-confirm-btn {
+  background-color: var(--color-accent) !important;
+  border-radius: 999px !important;
+  padding: 8px 20px !important;
+}
+
+.swal-confirm-btn:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.swal-cancel-btn {
+  border: 2px solid var(--color-accent) !important;
+  color: var(--color-accent) !important;
+  background-color: transparent !important;
+  border-radius: 999px !important;
+  padding: 8px 20px !important;
+}
+
+.swal-cancel-btn:hover {
+  background-color: var(--color-card-bg) !important;
+}
+
+/* ======================================
+   SUBMISSION VIEW
+   ====================================== */
+
+.submission-info {
+  background: var(--color-card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--color-secondary-text);
+}
+
+.info-value {
+  color: var(--color-primary-text);
+  word-wrap: break-word;
+}
+
+#answers-container {
+  margin-top: 20px;
+}
+
+#answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.answer-card {
+  background: var(--color-page-bg);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.answer-text {
+  margin: 10px 0;
+  padding: 10px;
+  background: var(--color-card-bg);
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.answer-mark {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.answer-mark.correct {
+  background-color: #89EBAD;
+  color: #2CA910;
+}
+
+.answer-mark.incorrect {
+  background-color: #F9A4A4;
+  color: #D51A1A;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN - TABLETS
+   ====================================== */
+
+@media (max-width: 992px) {
+  /* Dashboard Statistics */
+  .admin-dashboard .statistics {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .admin-dashboard .dashboard-card {
+    width: 220px;
+    height: 140px;
+  }
+
+  .admin-dashboard .card-counter {
+    font-size: 60px;
+  }
+
+  /* Form Results Layout */
+  .admin-form-results {
+    flex-direction: column;
+    width: 90vw;
+    padding-top: 12vh;
+  }
+
+  #form-overview,
+  #submissions,
+  #form-inputs,
+  #questions,
+  #submission-view {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  #submission-view {
+    width: 100%;
+  }
+
+  /* Overview Statistics */
+  .overview-statistics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .overview-statistics .card .card-count {
+    font-size: 2.5em;
+  }
+
+  /* Table Responsiveness */
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  /* Form Actions */
+  .form-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-actions > div {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ======================================
+   RESPONSIVE DESIGN - MOBILE
+   ====================================== */
+
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    width: 95vw;
+  }
+
+  /* Dashboard */
+  .admin-dashboard {
+    padding-top: 12vh;
+  }
+
+  .admin-dashboard .statistics {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .admin-dashboard .dashboard-card {
+    width: 100%;
+    max-width: 300px;
+    height: 120px;
+  }
+
+  .admin-dashboard .card-counter {
+    font-size: 50px;
+  }
+
+  .admin-dashboard .card-text {
+    font-size: 12px;
+  }
+
+  /* Form Results */
+  .admin-form-results {
+    padding-top: 10vh;
+    gap: 20px;
+  }
+
+  #form-overview,
+  #submissions,
+  #form-inputs,
+  #questions {
+    width: 100%;
+    padding: 15px 10px;
+    height: auto;
+  }
+
+  /* Card Titles */
+  .form-results-card-title,
+  .form-create-card-title {
+    font-size: 1.2em;
+  }
+
+  /* Title Settings */
+  .title-and-settings,
+  .title-and-activate {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modification-settings {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Overview Statistics */
+  .overview-statistics {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-statistics .card .card-count {
+    font-size: 2em;
+  }
+
+  /* Form Inputs */
+  #form-title-input,
+  #form-description-input {
+    font-size: 14px;
+  }
+
+  /* Buttons */
+  .create-form-buttons,
+  .create-question-buttons {
+    flex-direction: column;
+  }
+
+  .create-form-buttons button,
+  .create-question-buttons button {
+    width: 100%;
+    text-align: center;
+  }
+
+  #add-question-btn {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  /* Questions */
+  #no-question-label {
+    font-size: 24px;
+  }
+
+  .question-card {
+    padding: 10px;
+  }
+
+  .question-number {
+    font-size: 16px;
+  }
+
+  .question-text {
+    font-size: 14px;
+  }
+
+  /* Question Card Buttons */
+  .question-card > div:last-child {
+    flex-direction: column;
+  }
+
+  .question-card button {
+    width: 100%;
+  }
+
+  /* Submission View */
+  #submission-view {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .submission-info {
+    padding: 10px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Answer Cards */
+  .answer-card {
+    padding: 10px;
+  }
+
+  /* Tables */
+  .coaches-table thead tr th,
+  .coaches-table tbody td {
+    font-size: 0.7rem;
+    padding: 5px;
+  }
+
+  /* Form Actions Mobile */
+  .form-actions {
+    gap: 5px;
+  }
+
+  .form-actions > div {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  /* SweetAlert Dialog */
+  .swal2-popup {
+    width: 95% !important;
+    padding: 15px !important;
+  }
+
+  #create-question {
+    padding: 5px !important;
+  }
+
+  .main-controllers,
+  .formatting-and-preview {
+    flex-direction: column;
+  }
+
+  .type-and-mark {
+    flex-direction: column;
+  }
+
+  .formatting {
+    min-width: 100%;
+  }
+
+  #option-input {
+    flex-direction: column;
+  }
+
+  #select-input {
+    width: 100%;
+  }
+
+  #add-option-btn,
+  #remove-option-btn {
+    width: 100%;
+  }
+}
+
+/* ======================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   ====================================== */
+
+@media (max-width: 480px) {
+  /* Dashboard Card */
+  .admin-dashboard .dashboard-card {
+    height: 100px;
+  }
+
+  .admin-dashboard .card-counter {
+    font-size: 40px;
+  }
+
+  /* Card Titles */
+  .form-results-card-title,
+  .form-create-card-title {
+    font-size: 1em;
+  }
+
+  /* Overview Statistics */
+  .overview-statistics .card .card-count {
+    font-size: 1.5em;
+  }
+
+  .overview-statistics .card .card-text {
+    font-size: 12px;
+  }
+
+  /* No Questions Label */
+  #no-question-label {
+    font-size: 18px;
+  }
+
+  /* Tables - Reduce even more */
+  .coaches-table thead tr th,
+  .coaches-table tbody td {
+    font-size: 0.65rem;
+    padding: 3px;
+  }
+
+  /* Form Switch */
+  .form-switch {
+    font-size: 14px;
+  }
+
+  /* Buttons */
+  .btn-back,
+  #form-overview-edit-btn,
+  #create-form-btn,
+  #cancel-btn {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
 }

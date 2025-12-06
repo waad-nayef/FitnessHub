@@ -8,18 +8,16 @@
   <!-- css files -->
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="../css/create-question.css" />
   <!-- normalize file -->
-  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="../css/normalize.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/8bb0a97d35.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!--CREATE FORM (NO.6 & 7) Waad -->
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg -transparent">
     <div class="container-fluid">
@@ -40,11 +38,50 @@
     </div>
   </nav>
   <!-- End Navbar -->
-  <!-- Start admin-create-form Section -->
-  <section class="admin-create-form">
-    <div class="container"></div>
+
+  <!-- Start admin-form-results Section -->
+  <section class="admin-form-results">
+    <div id="form-inputs">
+      <div class="title-and-activate">
+        <div class="form-create-card-title">Form Overview</div>
+        <div id="form-status-toggle">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="active-toggle">
+            <label class="form-check-label" for="active-toggle">Active</label>
+          </div>
+        </div>
+      </div>
+
+      <form id="create-form">
+        <div class="form-title">
+          <div class="form-title-label">Title</div>
+          <input type="text" id="form-title-input" placeholder="Enter form title">
+        </div>
+
+        <div class="form-description">
+          <div class="form-description-label">Description</div>
+          <textarea id="form-description-input" placeholder="Enter form description"></textarea>
+        </div>
+
+        <div class="create-form-buttons">
+          <button type="button" id="cancel-btn">Cancel</button>
+          <button type="button" id="create-form-btn">Create Form</button>
+        </div>
+      </form>
+
+    </div>
+
+    <div id="questions">
+      <button id="add-question-btn" type="button" onclick="createQuestionForm()">
+        <i class="fa-solid fa-plus"></i> Add Question
+      </button>
+      <div id="no-question-label">No Questions Yet</div>
+    </div>
   </section>
-  <!-- End admin-create-form Section -->
+  <!-- End admin-form-results Section -->
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/createQuestion.js"></script>
 </body>
 
 </html>

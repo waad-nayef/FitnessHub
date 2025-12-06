@@ -43,52 +43,55 @@
   <!-- Start admin-form-results Section -->
   <section class="admin-form-results">
     <div id="form-overview">
-      <div class="title-and-activation">
+      <div class="title-and-settings">
         <div class="form-results-card-title">Form Overview</div>
-        <div id="form-status-toggle">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="active-toggle">
-            <label class="form-check-label" for="myToggle">Active</label>
+        <div class="modification-settings">
+          <div id="form-status-toggle">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="active-toggle">
+              <label class="form-check-label" for="myToggle">Active</label>
+            </div>
           </div>
+          <button id="form-overview-edit-btn">Edit</button>
         </div>
       </div>
 
       <div class="form-title">
-        <div class="form-title-label">Title</div>
-        <div class="form-title-text">Form XYZ</div>
+        <div class="form-title-label"></div>
+        <div class="form-title-text"></div>
       </div>
 
       <div class="form-description">
-        <div class="form-description-label">Description</div>
-        <div class="form-description-text">description text text text</div>
+        <div class="form-description-label"></div>
+        <div class="form-description-text"></div>
       </div>
       <div class="overview-statistics">
 
         <div class="dashboard-card card" id="total-questions">
-          <div class="card-count">9</div>
+          <div class="card-count">10</div>
           <div class="card-text">
             Questions
           </div>
         </div>
 
         <div class="dashboard-card card" id="total-questions">
-          <div class="card-count">9</div>
+          <div class="card-count">90%</div>
           <div class="card-text">
-            Questions
+            Average
           </div>
         </div>
 
-        <div class="dashboard-card card" id="total-questions">
+        <div class="dashboard-card card" id="total-submissions">
           <div class="card-count">9</div>
           <div class="card-text">
-            Questions
+            Submissions
           </div>
         </div>
 
-        <div class="dashboard-card card" id="total-questions">
-          <div class="card-count">9</div>
+        <div class="dashboard-card card" id="highest-score">
+          <div class="card-count">98%</div>
           <div class="card-text">
-            Questions
+            Highest Score
           </div>
         </div>
 
@@ -96,6 +99,22 @@
     </div>
     <div id="submissions">
       <div class="form-results-card-title">Coaches Submitted</div>
+      <div class="table-responsive">
+        <table class="table table-borderless align-middle mb-0 coaches-table">
+          <thead>
+            <tr>
+              <th scope="col" class="text-muted small">ID</th>
+              <th scope="col" class="text-muted small">Name</th>
+              <th scope="col" class="text-muted small">Email</th>
+              <th scope="col" class="text-muted small">Number</th>
+              <th scope="col" class="text-muted small">Score</th>
+            </tr>
+          </thead>
+          <tbody id="submissionsTableBody">
+            <!-- Dynamic rows injected from admin.js -->
+          </tbody>
+        </table>
+      </div>
 
     </div>
   </section>

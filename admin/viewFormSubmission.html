@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Submission | FitnessHub</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/8bb0a97d35.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="loadSubmission()">
+    <nav class="navbar navbar-expand-lg -transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-text" href="dashboard.html"><img src="../images/logo.png" class="logo-img"
+                    alt="FitnessHub logo">FitnessHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-links">
+                    <a class="nav-link active fs-6" href="dashboard.html">Dashboard</a>
+                    <a class="nav-link active fs-6" href="coachespage.html">Coaches</a>
+                    <a class="nav-link active fs-6" href="createform.html">Create Form</a>
+                    <a class="nav-link active fs-6" href="../public-pages/index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="admin-form-results">
+        <div id="submission-view">
+            <div class="form-results-card-title">Submission Details</div>
+
+            <div class="submission-info">
+                <div class="info-row">
+                    <span class="info-label">Coach Name:</span>
+                    <span class="info-value" id="coach-name">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value" id="coach-email">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value" id="coach-phone">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Form Title:</span>
+                    <span class="info-value" id="form-title">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Score:</span>
+                    <span class="info-value" id="submission-score">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Submission Date:</span>
+                    <span class="info-value" id="submission-date">-</span>
+                </div>
+            </div>
+
+            <div id="answers-container">
+                <div class="form-results-card-title">Answers</div>
+                <div id="answers-list"></div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button onclick="window.history.back()" class="btn-back">Back to Results</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function loadSubmission() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('userId');
+            const formId = parseInt(urlParams.get('formId'));
+
+            if (!userId || !formId) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            const submissions = JSON.parse(localStorage.getItem('submissions')) || [];
+            const submission = submissions.find(s => s.userId === userId && s.formId === formId);
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const coach = users.find(u => u.id === userId);
+
+            const forms = JSON.parse(localStorage.getItem('forms')) || [];
+            const form = forms.find(f => f.formId === formId);
+
+            if (!submission || !coach || !form) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            document.getElementById('coach-name').textContent = coach.fullName || '-';
+            document.getElementById('coach-email').textContent = coach.email || '-';
+            document.getElementById('coach-phone').textContent = coach.phoneNumber || '-';
+            document.getElementById('form-title').textContent = form.title || '-';
+            document.getElementById('submission-score').textContent = submission.score + '%';
+            document.getElementById('submission-date').textContent = submission.submittedAt || '-';
+
+            const answersList = document.getElementById('answers-list');
+            answersList.innerHTML = '';
+
+            if (submission.answers && submission.answers.length > 0) {
+                submission.answers.forEach((answer, index) => {
+                    const question = form.questions[index];
+                    const answerCard = document.createElement('div');
+                    answerCard.className = 'answer-card';
+
+                    let answerText = '';
+                    if (Array.isArray(answer.answer)) {
+                        answerText = answer.answer.join(', ');
+                    } else {
+                        answerText = answer.answer;
+                    }
+
+                    let style = '';
+                    if (question) {
+                        style = `font-family: ${question.fontType || 'Arial'};`;
+                        if (question.formatting?.bold) style += ' font-weight: bold;';
+                        if (question.formatting?.italic) style += ' font-style: italic;';
+                        if (question.formatting?.underline) style += ' text-decoration: underline;';
+                    }
+
+                    answerCard.innerHTML = `
+            <div class="question-number">Question ${index + 1}</div>
+            <div class="question-text" style="${style}">${question?.text || 'Question not found'}</div>
+            <div class="answer-text">
+              <strong>Answer:</strong> ${answerText}
+            </div>
+            <div class="answer-mark ${answer.isCorrect ? 'correct' : 'incorrect'}">
+              ${answer.isCorrect ? '✓ Correct' : '✗ Incorrect'} (${answer.earnedMark}/${question?.mark || 0} marks)
+            </div>
+          `;
+
+                    answersList.appendChild(answerCard);
+                });
+            } else {
+                answersList.innerHTML = '<p>No answers found</p>';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -47,7 +47,7 @@
       <div class="statistics">
 
         <div class="dashboard-card card" id="total-forms">
-          <div class="card-counter">21</div>
+          <div class="card-counter"></div>
 
           <div class="card-row">
             <div id="forms-indicator"></div>
@@ -60,7 +60,7 @@
         </div>
 
         <div class="dashboard-card card" id="total-coaches">
-          <div class="card-counter">21</div>
+          <div class="card-counter"></div>
 
           <div class="card-row">
             <div id="coaches-indicator"></div>
@@ -97,32 +97,26 @@
 
       </div>
 
-
-
       <div class="forms">
-        <!-- Coaches Table Card -->
-        <div class="card coaches-card">
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-borderless align-middle mb-0 coaches-table">
-                <thead>
-                  <tr>
-                    <th scope="col" class="text-muted small">ID</th>
-                    <th scope="col" class="text-muted small">Title</th>
-                    <th scope="col" class="text-muted small">Status</th>
-                    <th scope="col" class="text-muted small">Questions</th>
-                    <th scope="col" class="text-muted small">Date</th>
-                    <th scope="col" class="text-muted small">Highest Score</th>
-                    <th scope="col" class="text-muted small">Average</th>
-                    <th scope="col" class="text-muted small">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="formsTableBody">
-                  <!-- Dynamic rows injected from admin.js -->
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <!-- Forms Table Card -->
+        <div class="table-responsive">
+          <table class="table table-borderless align-middle mb-0 coaches-table">
+            <thead>
+              <tr>
+                <th scope="col" class="text-muted small">Index</th>
+                <th scope="col" class="text-muted small">Form Title</th>
+                <th scope="col" class="text-muted small">Number of Questions</th>
+                <th scope="col" class="text-muted small">Status</th>
+                <th scope="col" class="text-muted small">Creation Date</th>
+                <th scope="col" class="text-muted small">Highest Score</th>
+                <th scope="col" class="text-muted small">Average</th>
+                <th scope="col" class="text-muted small">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="formsTableBody">
+              <!-- Dynamic rows injected from admin.js -->
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
