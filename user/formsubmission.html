@@ -62,202 +62,216 @@
     <!-- Start user-submission Section -->
     <section class="user-submission">
       <div class="container my-5">
-        <!-- Form Title -->
+        <!-- Outer Big Card -->
         <div
-          class="mb-4"
+          class="card shadow-sm p-4"
           style="
-            background-color: var(--color-card-bg-transparent);
-            margin-bottom: 10px;
-            border-radius: 6px;
-            padding: 20px;
-            /* border: 1px solid var(--color-accent); */
+            border-radius: 20px;
+            background-color: var(--color-card-bg-transparent) !important;
           "
         >
-          <h2 class="fw-bold">Form XYZ</h2>
-          <p class="text-muted">
-            Description of the form text text text text text text text text text
-            text text text text text text text text text text text text text
-            text text text text text text text text text text text.
-          </p>
-        </div>
-
-        <!-- ===== Question 1 ===== -->
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="fw-bold text-danger mb-2">* Question 1</h5>
-            <p class="mb-3">
-              Text text text text text text text text text text text text text
-              text?
+          <!-- Form Title -->
+          <div class="mb-4">
+            <h2 class="fw-bold">Form XYZ</h2>
+            <p class="text-muted">
+              Description of the form text text text text text text text text
+              text text text text text text text text text text text text text
+              text text text text text text text text text text text text.
             </p>
+          </div>
 
-            <div class="form-check mb-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q1"
-                id="q1o1"
-              />
-              <label class="form-check-label" for="q1o1">Option 1</label>
-            </div>
+          <!-- ===== Question 1 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold text-danger mb-2">* Question 1</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
 
-            <div class="form-check mb-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q1"
-                id="q1o2"
-              />
-              <label class="form-check-label" for="q1o2">Option 1</label>
-            </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o1"
+                />
+                <label class="form-check-label" for="q1o1">Option 1</label>
+              </div>
 
-            <div class="form-check mb-3">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q1"
-                id="q1o3"
-              />
-              <label class="form-check-label" for="q1o3">Option 1</label>
-            </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o2"
+                />
+                <label class="form-check-label" for="q1o2">Option 1</label>
+              </div>
 
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q1"
-                id="q1o4"
-              />
-              <label class="form-check-label" for="q1o4">Option 1</label>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o3"
+                />
+                <label class="form-check-label" for="q1o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o4"
+                />
+                <label class="form-check-label" for="q1o4">Option 1</label>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ===== Question 2 ===== -->
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="fw-bold text-danger mb-2">* Question 2</h5>
-            <p>
-              Text text text text text text text text text text text text text
-              text?
-            </p>
-            <!-- Short Answer -->
-            <input
-              type="text"
-              class="form-control mt-3"
-              placeholder="Type your answer"
-            />
-          </div>
-        </div>
-
-        <!-- ===== Question 3 ===== -->
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="fw-bold text-danger mb-2">* Question 3</h5>
-            <p class="mb-3">
-              Text text text text text text text text text text text text text
-              text?
-            </p>
-
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="q3o1" />
-              <label class="form-check-label" for="q3o1">Option 1</label>
-            </div>
-
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="q3o2" />
-              <label class="form-check-label" for="q3o2">Option 1</label>
-            </div>
-
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="q3o3" />
-              <label class="form-check-label" for="q3o3">Option 1</label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="q3o4" />
-              <label class="form-check-label" for="q3o4">Option 1</label>
+          <!-- ===== Question 2 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold text-danger mb-2">* Question 2</h5>
+              <p>
+                Text text text text text text text text text text text text text
+                text?
+              </p>
+              <input
+                type="text"
+                class="form-control mt-3"
+                placeholder="Type your answer"
+              />
             </div>
           </div>
-        </div>
 
-        <!-- ===== Question 4 ===== -->
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="fw-bold mb-2">Question 4</h5>
-            <p class="mb-3">
-              Text text text text text text text text text text text text text
-              text?
-            </p>
+          <!-- ===== Question 3 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold text-danger mb-2">* Question 3</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
 
-            <div class="form-check mb-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q4"
-                id="q4o1"
-              />
-              <label class="form-check-label" for="q4o1">Option 1</label>
-            </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q3o1" />
+                <label class="form-check-label" for="q3o1">Option 1</label>
+              </div>
 
-            <div class="form-check mb-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q4"
-                id="q4o2"
-              />
-              <label class="form-check-label" for="q4o2">Option 1</label>
-            </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q3o2" />
+                <label class="form-check-label" for="q3o2">Option 1</label>
+              </div>
 
-            <div class="form-check mb-2">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q4"
-                id="q4o3"
-              />
-              <label class="form-check-label" for="q4o3">Option 1</label>
-            </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q3o3" />
+                <label class="form-check-label" for="q3o3">Option 1</label>
+              </div>
 
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="q4"
-                id="q4o4"
-              />
-              <label class="form-check-label" for="q4o4">Option 1</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="q3o4" />
+                <label class="form-check-label" for="q3o4">Option 1</label>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ===== Question 5 ===== -->
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="fw-bold mb-2">Question 5</h5>
-            <p class="mb-3">
-              Text text text text text text text text text text text text text
-              text?
-            </p>
+          <!-- ===== Question 4 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold mb-2">Question 4</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
 
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="q5o1" />
-              <label class="form-check-label" for="q5o1">Option 1</label>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o1"
+                />
+                <label class="form-check-label" for="q4o1">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o2"
+                />
+                <label class="form-check-label" for="q4o2">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o3"
+                />
+                <label class="form-check-label" for="q4o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o4"
+                />
+                <label class="form-check-label" for="q4o4">Option 1</label>
+              </div>
             </div>
+          </div>
 
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="q5o2" />
-              <label class="form-check-label" for="q5o2">Option 1</label>
-            </div>
+          <!-- ===== Question 5 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold mb-2">Question 5</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
 
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="q5o3" />
-              <label class="form-check-label" for="q5o3">Option 1</label>
-            </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q5o1" />
+                <label class="form-check-label" for="q5o1">Option 1</label>
+              </div>
 
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="q5o4" />
-              <label class="form-check-label" for="q5o4">Option 1</label>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q5o2" />
+                <label class="form-check-label" for="q5o2">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q5o3" />
+                <label class="form-check-label" for="q5o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="q5o4" />
+                <label class="form-check-label" for="q5o4">Option 1</label>
+              </div>
             </div>
           </div>
         </div>

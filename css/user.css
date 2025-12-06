@@ -158,6 +158,9 @@
 .user-submission {
   margin-top: 100px;
 }
+.form-sub-question {
+  background-color: #fff !important;
+}
 /************ End Form Submission **********************/
 
 /************ Start User info **********************/
