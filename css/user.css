@@ -1,7 +1,169 @@
 @import url("style.css");
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+/************ Start User Page **********************/
+/* Start user-landing */
+.user-landing {
+  height: calc(100vh);
+  padding: 20px;
+  padding-top: 120px;
+}
+.user-landing .container {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .user-landing .container {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+}
+/* Start available-forms  */
+.user-landing .container .available-forms {
+  /* flex-grow: 5; */
+  margin-right: 10px;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .user-landing .container .available-forms {
+    margin-right: 0px;
+  }
+}
+.user-landing .container .available-forms h4,
+.user-landing .container .previous-forms h4 {
+  margin-bottom: 20px;
+}
+.user-landing .container .available-forms .available-forms-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.user-landing .container .available-forms .available-forms-card .card {
+  min-width: 220px;
+  background-color: var(--color-card-bg-transparent) !important ;
+}
+@media (max-width: 767px) {
+  .user-landing .container .available-forms .available-forms-card .card {
+    width: 100%;
+  }
+}
+.user-landing .container .available-forms .available-forms-card .card h5 {
+  margin-bottom: 20px;
+}
+.user-landing .container .available-forms .available-forms-card .card p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.user-landing
+  .container
+  .available-forms
+  .available-forms-card
+  .card
+  .form-card-btn {
+  width: fit-content;
+  margin: auto;
+  padding: 5px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+/* End available-forms  */
+/* Start previous-forms  */
+.user-landing .container .previous-forms {
+  /* flex-grow: 4; */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .user-landing .container .previous-forms {
+    width: 100%;
+  }
+}
+.user-landing .container .previous-forms .previous-forms-card {
+  background-color: var(--color-card-bg-transparent) !important ;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
+  width: 300px;
+}
+@media (max-width: 767px) {
+  .user-landing .container .previous-forms .previous-forms-card {
+    width: 100%;
+  }
+}
+.user-landing .container .previous-forms .previous-forms-card .forms-statics {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .submitted-forms,
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .avr-score {
+  background-color: var(--color-secondary-text);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .submitted-forms
+  .submitted-forms-number,
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .avr-score
+  .avr-score-percent {
+  display: block;
+}
+
+.user-landing .container .previous-forms .previous-forms-card .forms-score {
+  margin-top: 20px;
+  font-size: 12px;
+}
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-score
+  .form-score {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-secondary-text);
+  color: #fff;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+/* End previous-forms  */
+/************ End User Page **********************/
+
+/************ Start Form Submission **********************/
+.user-submission {
+  margin-top: 100px;
+}
+.form-sub-question {
+  background-color: #fff !important;
+}
+/************ End Form Submission **********************/
+
+/************ Start User info **********************/
 .user-info {
   height: 85vh;
   display: flex;
@@ -67,10 +229,10 @@
   border-radius: 999px;
   font-weight: 500;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .profile-card {
     padding: 18px 16px 22px;
   }
 }
+/************ End User info **********************/

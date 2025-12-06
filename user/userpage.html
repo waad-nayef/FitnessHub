@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms | FitnessHub</title>
@@ -12,39 +11,188 @@
     <link rel="stylesheet" href="../css/normalize.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--USER PAGE (NO.5) Mohammad Alghrasi -->
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg -transparent">
-        <div class="container-fluid">
-            <a class="navbar-brand logo-text" href="userhome.html"><img src="../images/logo.png" class="logo-img"
-                    alt="FitnessHub">FitnessHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <div class="container-fluid">
+        <a class="navbar-brand logo-text" href="userhome.html"
+          ><img
+            src="../images/logo.png"
+            class="logo-img"
+            alt="FitnessHub"
+          />FitnessHub</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav nav-links">
-                    <a class="nav-link active fs-6" href="userhome.html">Home</a>
-                    <a class="nav-link active fs-6" href="userpage.html">Forms</a>
-                    <a class="nav-link active fs-6" href="userinfo.html">Edit Profile</a>
-                    <a class="nav-link active fs-6" href="../public-pages/index.html">Logout</a>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav-links">
+            <a class="nav-link active fs-6" href="userhome.html">Home</a>
+            <a class="nav-link active fs-6" href="userpage.html">Forms</a>
+            <a class="nav-link active fs-6" href="userinfo.html"
+              >Edit Profile</a
+            >
+            <a class="nav-link active fs-6" href="../public-pages/index.html"
+              >Logout</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
     <!-- End Navbar -->
     <!-- Start User Landing -->
     <section class="user-landing">
-        <div class="container"></div>
+      <!-- Start container -->
+      <div class="container">
+        <!-- Start available-forms -->
+        <div class="available-forms">
+          <h4>Available Forms</h4>
+          <div class="available-forms-card">
+            <div class="user-form-1 card">
+              <h5>Form Title</h5>
+              <p>Date:</p>
+              <p>Number of submissions:</p>
+              <p>Mark:</p>
+              <input
+                type="button"
+                value="Start"
+                class="btn-primary form-card-btn"
+              />
+            </div>
+            <div class="user-form-2 card">
+              <h5>Form Title</h5>
+              <p>Date:</p>
+              <p>Number of submissions:</p>
+              <p>Mark:</p>
+              <input
+                type="button"
+                value="Start"
+                class="btn-primary form-card-btn"
+                src="../user/formsubmission.html"
+              />
+            </div>
+            <div class="user-form-3 card">
+              <h5>Form Title</h5>
+              <p>Date:</p>
+              <p>Number of submissions:</p>
+              <p>Mark:</p>
+              <input
+                type="button"
+                value="Start"
+                class="btn-primary form-card-btn"
+              />
+            </div>
+            <div class="user-form-4 card">
+              <h5>Form Title</h5>
+              <p>Date:</p>
+              <p>Number of submissions:</p>
+              <p>Mark:</p>
+              <input
+                type="button"
+                value="Start"
+                class="btn-primary form-card-btn"
+              />
+            </div>
+            <div class="user-form-5 card">
+              <h5>Form Title</h5>
+              <p>Date:</p>
+              <p>Number of submissions:</p>
+              <p>Mark:</p>
+              <input
+                type="button"
+                value="Start"
+                class="btn-primary form-card-btn"
+              />
+            </div>
+            <div class="user-form-6 card">
+              <h5>Form Title</h5>
+              <p>Date:</p>
+              <p>Number of submissions:</p>
+              <p>Mark:</p>
+              <input
+                type="button"
+                value="Start"
+                class="btn-primary form-card-btn"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- End available-forms -->
+        <!-- Start Previous-forms -->
+        <div class="previous-forms">
+          <h4>Your Previous Submissions</h4>
+          <div class="previous-forms-card card">
+            <div class="forms-statics">
+              <div class="submitted-forms">
+                <span class="submitted-forms-number">6</span> Submitted Forms
+              </div>
+              <div class="avr-score">
+                <span class="avr-score-percent">6</span> Average Score
+              </div>
+            </div>
+            <div class="forms-score">
+              <div class="form-score">
+                <span>Form Title</span>
+                <span
+                  >Score: <span class="submitted-forms-score">98%</span></span
+                >
+              </div>
+              <div class="form-score">
+                <span>Form Title</span>
+                <span
+                  >Score: <span class="submitted-forms-score">98%</span></span
+                >
+              </div>
+              <div class="form-score">
+                <span>Form Title</span>
+                <span
+                  >Score: <span class="submitted-forms-score">98%</span></span
+                >
+              </div>
+              <div class="form-score">
+                <span>Form Title</span>
+                <span
+                  >Score: <span class="submitted-forms-score">98%</span></span
+                >
+              </div>
+              <div class="form-score">
+                <span>Form Title</span>
+                <span
+                  >Score: <span class="submitted-forms-score">98%</span></span
+                >
+              </div>
+              <div class="form-score">
+                <span>Form Title</span>
+                <span
+                  >Score: <span class="submitted-forms-score">98%</span></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Previous-forms -->
+      </div>
+      <!-- End container -->
     </section>
     <!-- End User Landing -->
-</body>
-
+  </body>
 </html>

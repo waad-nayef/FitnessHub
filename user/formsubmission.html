@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Submission | FitnessHub</title>
@@ -12,39 +11,272 @@
     <link rel="stylesheet" href="../css/normalize.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--FORM SUBMISSION PAGE (NO.9) Mohammad Alghrasi  -->
     <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg -transparent">
-        <div class="container-fluid">
-            <a class="navbar-brand logo-text" href="userhome.html"><img src="../images/logo.png" class="logo-img"
-                    alt="FitnessHub">FitnessHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg -transparent" style="top: 0">
+      <div class="container-fluid">
+        <a class="navbar-brand logo-text" href="userhome.html"
+          ><img
+            src="../images/logo.png"
+            class="logo-img"
+            alt="FitnessHub"
+          />FitnessHub</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav nav-links">
-                    <a class="nav-link active fs-6" href="userhome.html">Home</a>
-                    <a class="nav-link active fs-6" href="userpage.html">Forms</a>
-                    <a class="nav-link active fs-6" href="userinfo.html">Edit Profile</a>
-                    <a class="nav-link active fs-6" href="../public-pages/index.html">Logout</a>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav-links">
+            <a class="nav-link active fs-6" href="userhome.html">Home</a>
+            <a class="nav-link active fs-6" href="userpage.html">Forms</a>
+            <a class="nav-link active fs-6" href="userinfo.html"
+              >Edit Profile</a
+            >
+            <a class="nav-link active fs-6" href="../public-pages/index.html"
+              >Logout</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
     <!-- End Navbar -->
     <!-- Start user-submission Section -->
     <section class="user-submission">
-        <div class="container"></div>
+      <div class="container my-5">
+        <!-- Outer Big Card -->
+        <div
+          class="card shadow-sm p-4"
+          style="
+            border-radius: 20px;
+            background-color: var(--color-card-bg-transparent) !important;
+          "
+        >
+          <!-- Form Title -->
+          <div class="mb-4">
+            <h2 class="fw-bold">Form XYZ</h2>
+            <p class="text-muted">
+              Description of the form text text text text text text text text
+              text text text text text text text text text text text text text
+              text text text text text text text text text text text text.
+            </p>
+          </div>
+
+          <!-- ===== Question 1 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold text-danger mb-2">* Question 1</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o1"
+                />
+                <label class="form-check-label" for="q1o1">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o2"
+                />
+                <label class="form-check-label" for="q1o2">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o3"
+                />
+                <label class="form-check-label" for="q1o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q1"
+                  id="q1o4"
+                />
+                <label class="form-check-label" for="q1o4">Option 1</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== Question 2 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold text-danger mb-2">* Question 2</h5>
+              <p>
+                Text text text text text text text text text text text text text
+                text?
+              </p>
+              <input
+                type="text"
+                class="form-control mt-3"
+                placeholder="Type your answer"
+              />
+            </div>
+          </div>
+
+          <!-- ===== Question 3 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold text-danger mb-2">* Question 3</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q3o1" />
+                <label class="form-check-label" for="q3o1">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q3o2" />
+                <label class="form-check-label" for="q3o2">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q3o3" />
+                <label class="form-check-label" for="q3o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="q3o4" />
+                <label class="form-check-label" for="q3o4">Option 1</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== Question 4 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold mb-2">Question 4</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o1"
+                />
+                <label class="form-check-label" for="q4o1">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o2"
+                />
+                <label class="form-check-label" for="q4o2">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o3"
+                />
+                <label class="form-check-label" for="q4o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="q4"
+                  id="q4o4"
+                />
+                <label class="form-check-label" for="q4o4">Option 1</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== Question 5 ===== -->
+          <div
+            class="card mb-4 shadow-sm form-sub-question"
+            style="border-radius: 15px"
+          >
+            <div class="card-body">
+              <h5 class="fw-bold mb-2">Question 5</h5>
+              <p class="mb-3">
+                Text text text text text text text text text text text text text
+                text?
+              </p>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q5o1" />
+                <label class="form-check-label" for="q5o1">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q5o2" />
+                <label class="form-check-label" for="q5o2">Option 1</label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="q5o3" />
+                <label class="form-check-label" for="q5o3">Option 1</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="q5o4" />
+                <label class="form-check-label" for="q5o4">Option 1</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- End user-submission Section -->
-</body>
-
+  </body>
 </html>

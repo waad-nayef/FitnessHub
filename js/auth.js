@@ -1,6 +1,4 @@
-
 let users = JSON.parse(localStorage.getItem("users")) || [];
-
 
 //(Regex)
 const nameRegex = /^[A-Za-z\s]{3,}$/;
@@ -8,7 +6,14 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 const phoneRegex = /^07\d{8}$/;
 
-
+// git date
+function getTodayDate() {
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const year = today.getFullYear();
+  return `${day}-${month}-${year}`;
+}
 
 //Show error
 function showError(input, message) {
@@ -35,7 +40,6 @@ function clearError(input) {
     errorMsg.remove();
   }
 }
-
 
 if (window.location.pathname.includes("sign-up.html")) {
   const form = document.querySelector(".sign-up");
@@ -121,7 +125,7 @@ if (window.location.pathname.includes("sign-up.html")) {
       phoneNumber: phoneInput.value,
       password: passInput.value,
       isAdmin: false,
-      createdAt: new Date().toLocaleDateString("en-GB"),
+      createdAt: getTodayDate(),
       submittedForms: 0,
       averageScore: 0,
     };
@@ -140,10 +144,7 @@ if (window.location.pathname.includes("sign-up.html")) {
   });
 }
 
-
 // Log in page
-
-
 if (window.location.pathname.includes("login.html")) {
   const form = document.querySelector(".sign-up");
 
