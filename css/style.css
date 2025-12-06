@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 /* Start Global Rules*/
 :root {
@@ -7,10 +7,10 @@
   --color-secondary-text: #393e46;
   --color-accent: #00adb5;
   --color-card-bg: #eeeeee;
-  --color-card-bg-transparent: rgba(238, 238, 238, 0.50);
+  --color-card-bg-transparent: rgba(238, 238, 238, 0.5);
   --color-page-bg: #ffffff;
   --hover-color: #02676b;
-  --border-color: #D9D9D9;
+  --border-color: #d9d9d9;
 }
 
 * {
@@ -146,7 +146,7 @@ body {
   color: var(--color-primary-text) !important;
 }
 
-nav{
+nav {
   width: 100%;
   position: fixed !important;
   border-bottom: solid var(--color-card-bg) 1px !important;
@@ -241,5 +241,64 @@ nav{
   .signUp-photo img {
     width: 300px;
     height: 300px;
+  }
+}
+
+/* Home page */
+
+.home-landing {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+.home-landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("../images/home-image.JPG") center/cover no-repeat;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.home-landing .container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  width: 60%;
+  font-weight: 700;
+}
+.home-landing .container h1 {
+  font-weight: 900;
+}
+.color-text {
+  color: var(--color-accent);
+}
+.btn1 {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: small;
+  padding: 6px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn2 {
+  border-radius: 5px;
+  color: white !important;
+  font-size: small;
+  padding: 8px 20px;
+  margin: 10px;
+  text-decoration: none;
+}
+@media (max-width: 768px){
+  .home-landing .container{
+    width: 100%;
   }
 }
