@@ -152,6 +152,7 @@ nav {
   border-bottom: solid var(--color-card-bg) 1px !important;
   background: var(--color-page-bg);
   z-index: 9999 !important;
+  top: 0;
 }
 
 .nav-links {

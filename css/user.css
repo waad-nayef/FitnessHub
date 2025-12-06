@@ -12,32 +12,55 @@
 .user-landing .container {
   display: flex;
 }
+@media (max-width: 767px) {
+  .user-landing .container {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+}
 /* Start available-forms  */
 .user-landing .container .available-forms {
-  flex-grow: 3;
+  /* flex-grow: 5; */
   margin-right: 10px;
+  padding: 10px;
 }
-.user-landing .container .available-forms h2 {
+@media (max-width: 767px) {
+  .user-landing .container .available-forms {
+    margin-right: 0px;
+  }
+}
+.user-landing .container .available-forms h4,
+.user-landing .container .previous-forms h4 {
   margin-bottom: 20px;
 }
-.user-landing .container .available-forms .user-forms {
+.user-landing .container .available-forms .available-forms-card {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-g .user-landing .container .available-forms .user-forms div {
-  /* padding-right: 20px; */
+
+.user-landing .container .available-forms .available-forms-card .card {
   min-width: 220px;
   background-color: var(--color-card-bg-transparent) !important ;
 }
-.user-landing .container .available-forms .user-forms h5 {
+@media (max-width: 767px) {
+  .user-landing .container .available-forms .available-forms-card .card {
+    width: 100%;
+  }
+}
+.user-landing .container .available-forms .available-forms-card .card h5 {
   margin-bottom: 20px;
 }
-.user-landing .container .available-forms .user-forms p {
+.user-landing .container .available-forms .available-forms-card .card p {
   font-size: 12px;
   margin-bottom: 10px;
 }
-.user-landing .container .available-forms .user-forms .user-form-btn {
+.user-landing
+  .container
+  .available-forms
+  .available-forms-card
+  .card
+  .form-card-btn {
   width: fit-content;
   margin: auto;
   padding: 5px 20px;
@@ -47,13 +70,95 @@ g .user-landing .container .available-forms .user-forms div {
 /* End available-forms  */
 /* Start previous-forms  */
 .user-landing .container .previous-forms {
-  flex-grow: 2;
+  /* flex-grow: 4; */
+  padding: 10px;
+  margin-bottom: 20px;
 }
-.user-landing .container .previous-submission {
-  background-color: var(--color-card);
+@media (max-width: 767px) {
+  .user-landing .container .previous-forms {
+    width: 100%;
+  }
 }
+.user-landing .container .previous-forms .previous-forms-card {
+  background-color: var(--color-card-bg-transparent) !important ;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
+  width: 300px;
+}
+@media (max-width: 767px) {
+  .user-landing .container .previous-forms .previous-forms-card {
+    width: 100%;
+  }
+}
+.user-landing .container .previous-forms .previous-forms-card .forms-statics {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .submitted-forms,
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .avr-score {
+  background-color: var(--color-secondary-text);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .submitted-forms
+  .submitted-forms-number,
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-statics
+  .avr-score
+  .avr-score-percent {
+  display: block;
+}
+
+.user-landing .container .previous-forms .previous-forms-card .forms-score {
+  margin-top: 20px;
+  font-size: 12px;
+}
+.user-landing
+  .container
+  .previous-forms
+  .previous-forms-card
+  .forms-score
+  .form-score {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-secondary-text);
+  color: #fff;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
 /* End previous-forms  */
 /************ End User Page **********************/
+
+/************ Start Form Submission **********************/
+.user-submission {
+  margin-top: 100px;
+}
+/************ End Form Submission **********************/
 
 /************ Start User info **********************/
 .user-info {
