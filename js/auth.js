@@ -175,7 +175,48 @@ if (window.location.pathname.includes("login.html")) {
       if (user.isAdmin) {
         window.location.href = "../admin/dashboard.html";
       } else {
-        window.location.href = "../user/userhome.html";
+        window.location.href = "../user/userpage.html";
+      }
+    });
+  });
+}
+
+///////////////////////////////////////////////////////////
+// Log in page
+if (window.location.pathname.includes("login.html")) {
+  const form = document.querySelector(".sign-up");
+
+  const emailInput = document.getElementById("email");
+  const passInput = document.getElementById("password");
+
+  emailInput.addEventListener("input", () => clearError(emailInput));
+  passInput.addEventListener("input", () => clearError(passInput));
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let user = users.find(
+      (u) => u.email === emailInput.value && u.password === passInput.value
+    );
+
+    if (!user) {
+      showError(passInput, "Incorrect email or password.");
+      return;
+    }
+
+    // SAVE currentUser ID
+    localStorage.setItem("currentUser", user.id);
+
+    Swal.fire({
+      title: "Welcome!",
+      text: "Login successful!",
+      icon: "success",
+      confirmButtonText: "Continue",
+    }).then(() => {
+      if (user.isAdmin) {
+        window.location.href = "../admin/dashboard.html";
+      } else {
+        window.location.href = "../user/userpage.html";
       }
     });
   });
