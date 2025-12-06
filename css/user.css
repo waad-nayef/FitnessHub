@@ -25,7 +25,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.user-landing .container .available-forms .user-forms div {
+g .user-landing .container .available-forms .user-forms div {
   /* padding-right: 20px; */
   min-width: 220px;
   background-color: var(--color-card-bg-transparent) !important ;
