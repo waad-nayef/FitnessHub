@@ -95,8 +95,7 @@ function loadPreviousSubmissions(userSubmissions, forms) {
       scoreDiv.className = "form-score";
       scoreDiv.innerHTML = `
         <span>${form?.title || "Unknown Form"}</span>
-        <span>Score: <span class="submitted-forms-score">${
-          submission.score || 0
+        <span>Score: <span class="submitted-forms-score">${submission.score || 0
         }%</span></span>
       `;
       formsScoreContainer.appendChild(scoreDiv);
@@ -225,9 +224,8 @@ function loadFormSubmission() {
 
       let questionHTML = `
         <div class="card-body">
-          <h5 class="fw-bold text-danger mb-2">* Question ${index + 1} (${
-        question.mark || 1
-      } marks)</h5>
+          <h5 class="fw-bold text-danger mb-2">* Question ${index + 1} (${question.mark || 1
+        } marks)</h5>
           <p class="mb-3">${question.text}</p>
       `;
 
@@ -330,7 +328,7 @@ function loadFormSubmission() {
         );
         const avgScore = Math.round(
           allSubmissions.reduce((sum, s) => sum + s.score, 0) /
-            allSubmissions.length
+          allSubmissions.length
         );
         users[userIndex].averageScore = avgScore;
 
@@ -346,7 +344,7 @@ function loadFormSubmission() {
         );
         forms[formIndex].average = Math.round(
           formSubmissions.reduce((sum, s) => sum + s.score, 0) /
-            formSubmissions.length
+          formSubmissions.length
         );
         localStorage.setItem(FORMS_KEY, JSON.stringify(forms));
       }
@@ -395,7 +393,7 @@ function calculateScore(form, answers) {
       if (
         userAnswer &&
         userAnswer.toLowerCase().trim() ===
-          (question.correctAnswer || "").toLowerCase().trim()
+        (question.correctAnswer || "").toLowerCase().trim()
       ) {
         correctAnswers += question.mark || 1;
       }
@@ -448,4 +446,23 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (window.location.pathname.includes("formsubmission.html")) {
     loadFormSubmission();
   }
+
+  fetch('https://zenquotes.io/api/random')
+  .then(res => res.json())
+  .then(data => {
+    const card = document.getElementById('public-api');
+
+    card.innerHTML = `
+      <p class="quote">"${data[0].q}"</p>
+      <span class="author">— ${data[0].a}</span>
+    `;
+  })
+  .catch(() => {
+    document.getElementById('public-api').innerHTML = `
+      <p class="quote">Stay consistent. Results will come.</p>
+      <span class="author"></span>
+    `;
+  });
+
+
 });

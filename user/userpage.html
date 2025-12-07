@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forms | FitnessHub</title>
-    <!-- css files -->
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/user.css" />
-    <!-- normalize file -->
-    <link rel="stylesheet" href="../css/normalize.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms | FitnessHub</title>
+  <!-- css files -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/user.css" />
+  <!-- normalize file -->
+  <link rel="stylesheet" href="../css/normalize.css" />
 
-  <body>
-    <!--USER PAGE (NO.5) Mohammad Alghrasi -->
-    <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg -transparent">
-      <div class="container-fluid">
-        <a class="navbar-brand logo-text" href="userhome.html"
-          ><img
-            src="../images/logo.png"
-            class="logo-img"
-            alt="FitnessHub"
-          />FitnessHub</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav nav-links">
-            <a class="nav-link active fs-6" href="userpage.html">Forms</a>
-            <a class="nav-link active fs-6" href="userinfo.html"
-              >Edit Profile</a
-            >
-            <a class="nav-link active fs-6" href="../public-pages/index.html"
-              >Logout</a
-            >
-          </div>
+<body>
+  <!--USER PAGE (NO.5) Mohammad Alghrasi -->
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg -transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand logo-text" href="userhome.html"><img src="../images/logo.png" class="logo-img"
+          alt="FitnessHub" />FitnessHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-links">
+          <a class="nav-link active fs-6" href="userpage.html">Forms</a>
+          <a class="nav-link active fs-6" href="userinfo.html">Edit Profile</a>
+          <a class="nav-link active fs-6" href="../public-pages/index.html">Logout</a>
         </div>
       </div>
-    </nav>
-    <!-- End Navbar -->
-    <!-- Start User Landing -->
-    <section class="user-landing">
-      <!-- Start container -->
-      <div class="container">
-        <!-- Start available-forms -->
-        <div class="available-forms">
-          <h4>Available Forms</h4>
-          <div class="available-forms-card">
-            <!-- <div class="user-form-1 card">
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <!-- Start User Landing -->
+  <section class="user-landing">
+    <!-- Start container -->
+    <div class="container">
+      <!-- Start available-forms -->
+      <div class="available-forms">
+        <h4>Available Forms</h4>
+        <div class="available-forms-card">
+          <!-- <div class="user-form-1 card">
               <h5>Form Title</h5>
               <p>Date:</p>
               <p>Number of submissions:</p>
@@ -133,12 +114,12 @@
                 class="btn-primary form-card-btn"
               />
             </div> -->
-          </div>
         </div>
-        <!-- End available-forms -->
-        <!-- Start Previous-forms -->
-        <div class="sidebar">
-          <div class="previous-forms">
+      </div>
+      <!-- End available-forms -->
+      <!-- Start Previous-forms -->
+      <div class="sidebar">
+        <div class="previous-forms">
           <h4>Your Previous Submissions</h4>
           <div class="previous-forms-card card">
             <div class="forms-statics">
@@ -186,22 +167,23 @@
                   >Score: <span class="submitted-forms-score">98%</span></span
                 >
               </div> -->
+              </div>
             </div>
           </div>
+          <!-- End Previous-forms -->
         </div>
-        <!-- End Previous-forms -->
-      </div>
         <!-- Start Public API -->
-      <div class="public-api card"  >
+        <div class="card" id="public-api">
 
-      </div>
+        </div>
       </div>
 
-        <!-- End Public API -->
+      <!-- End Public API -->
       <!-- End container -->
-    </section>
-    <!-- End User Landing -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/user.js"></script>
-  </body>
+  </section>
+  <!-- End User Landing -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/user.js"></script>
+</body>
+
 </html>
