@@ -173,7 +173,7 @@ function dashboard() {
 
   function editForm(formId) {
     window.location.href = `createform.html?formId=${formId}`;
- 
+
   }
 
   function deleteForm(formId) {
@@ -185,23 +185,31 @@ function dashboard() {
       cancelButtonColor: '#6c757d',
       confirmButtonText: 'Yes'
     }).then((result) => {
-      if (result.isConfirmed) {
-        let forms = JSON.parse(localStorage.getItem(FORMS_KEY));
-        forms = forms.filter(f => f.formId !== formId);
-        localStorage.setItem(FORMS_KEY, JSON.stringify(forms));
+      if (!result.isConfirmed) return;
 
-        let submissions = JSON.parse(localStorage.getItem('submissions'));
-        submissions = submissions.filter(s => s.formId !== formId);
-        localStorage.setItem('submissions', JSON.stringify(submissions));
+      const key = 'forms';
 
-        Swal.fire({
-          icon: 'success',
-          title: 'Form Deleted',
-          showConfirmButton: false,
-        }).then(() => {
-          location.reload();
-        });
-      }
+      const formsJson = localStorage.getItem(key) ?? '[]';
+      const submissionsJson = localStorage.getItem('submissions') ?? '[]';
+
+      let forms = JSON.parse(formsJson);
+      let submissions = JSON.parse(submissionsJson);
+
+      forms = forms.filter(f => String(f.formId) !== String(formId));
+
+      submissions = submissions.filter(s => String(s.formId) !== String(formId));
+
+      localStorage.setItem(key, JSON.stringify(forms));
+      localStorage.setItem('submissions', JSON.stringify(submissions));
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Form Deleted',
+        showConfirmButton: false,
+        timer: 900
+      }).then(() => {
+        location.reload();
+      });
     });
   }
 
