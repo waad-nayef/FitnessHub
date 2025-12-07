@@ -79,23 +79,38 @@
     width: 100%;
   }
 }
+.user-landing .container .sidebar {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .user-landing .container .sidebar {
+    width: 100%;
+  }
+}
 .user-landing .container .previous-forms .previous-forms-card {
   background-color: var(--color-card-bg-transparent) !important ;
   display: flex;
   flex-direction: column;
   padding: 10px 25px;
-  width: 300px;
+  width: 100%;
 }
-@media (max-width: 767px) {
-  .user-landing .container .previous-forms .previous-forms-card {
-    width: 100%;
-  }
-}
+
 .user-landing .container .previous-forms .previous-forms-card .forms-statics {
   display: flex;
   justify-content: center;
   gap: 5px;
 }
+/* .user-landing .container .previous-forms .previous-forms-card .form-score {
+  min-width: max-content;
+}
+@media (max-width: 767px) {
+  .user-landing .container .previous-forms .previous-forms-card .form-score {
+    width: 100%;
+  }
+} */
 .user-landing
   .container
   .previous-forms
@@ -150,8 +165,13 @@
   border-radius: 6px;
   margin-bottom: 5px;
 }
-
 /* End previous-forms  */
+/* Start Public API  */
+
+.public-api {
+}
+
+/* End Public API  */
 /************ End User Page **********************/
 
 /************ Start Form Submission **********************/
