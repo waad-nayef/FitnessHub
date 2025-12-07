@@ -34,7 +34,7 @@ function loadUserPage() {
         "background-color: var(--color-card-bg-transparent) !important;";
 
       const formSubmissionsCount = userSubmissions.filter(
-        (sub) => sub.formId === form.formId
+        (sub) => sub.formId == form.formId
       ).length;
 
       formCard.innerHTML = `
@@ -90,7 +90,7 @@ function loadPreviousSubmissions(userSubmissions, forms) {
     formsScoreContainer.innerHTML = "";
 
     userSubmissions.forEach((submission) => {
-      const form = forms.find((f) => f.formId === submission.formId);
+      const form = forms.find((f) => f.formId == submission.formId); // ← Changed === to ==
       const scoreDiv = document.createElement("div");
       scoreDiv.className = "form-score";
       scoreDiv.innerHTML = `
@@ -179,24 +179,131 @@ function loadFormSubmission() {
   const currentUser = getCurrentUser();
   const selectedFormId = localStorage.getItem("selectedFormId");
   const forms = JSON.parse(localStorage.getItem(FORMS_KEY)) || [];
-  const selectedForm = forms.find((f) => f.formId === selectedFormId);
+  const selectedForm = forms.find((f) => f.formId == selectedFormId);
 
   if (!selectedForm) {
-    alert("Form not found");
-    window.location.href = "userpage.html";
+    Swal.fire({
+      title: "Error!",
+      text: "Form not found. Please try again.",
+      icon: "error",
+      confirmButtonText: "OK",
+    }).then(() => {
+      window.location.href = "userpage.html";
+    });
     return;
   }
 
-  const formTitle = document.querySelector(".user-submission h2");
-  if (formTitle) {
-    formTitle.textContent = selectedForm.title;
+  if (!selectedForm.questions || selectedForm.questions.length === 0) {
+    Swal.fire({
+      title: "Error!",
+      text: "This form has no questions yet.",
+      icon: "warning",
+      confirmButtonText: "OK",
+    }).then(() => {
+      window.location.href = "userpage.html";
+    });
+    return;
   }
 
+  const formTitleHeading = document.querySelector(".form-title-heading");
+  const formDescriptionText = document.querySelector(".form-description-text");
+
+  if (formTitleHeading) formTitleHeading.textContent = selectedForm.title;
+  if (formDescriptionText) {
+    formDescriptionText.textContent =
+      selectedForm.description || "No description provided";
+  }
+
+  const questionsContainer = document.getElementById("questionsContainer");
+  if (questionsContainer && selectedForm.questions) {
+    questionsContainer.innerHTML = "";
+
+    selectedForm.questions.forEach((question, index) => {
+      const questionDiv = document.createElement("div");
+      questionDiv.className = "card mb-4 shadow-sm form-sub-question";
+      questionDiv.style.borderRadius = "15px";
+
+      let questionHTML = `
+        <div class="card-body">
+          <h5 class="fw-bold text-danger mb-2">* Question ${index + 1} (${
+        question.mark || 1
+      } marks)</h5>
+          <p class="mb-3">${question.text}</p>
+      `;
+
+      // Handle different question types
+      if (question.type === "radio") {
+        if (question.options && question.options.length > 0) {
+          question.options.forEach((option, optIndex) => {
+            const optionId = `q${index}o${optIndex}`;
+            // Get option text (handle both string and object formats)
+            const optionText =
+              typeof option === "object" ? option.text : option;
+            const optionId_val =
+              typeof option === "object" ? option.id : optionText;
+
+            questionHTML += `
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="question_${index}"
+                  id="${optionId}"
+                  value="${optionId_val}"
+                />
+                <label class="form-check-label" for="${optionId}">${optionText}</label>
+              </div>
+            `;
+          });
+        }
+      } else if (question.type === "select" || question.type === "checkbox") {
+        if (question.options && question.options.length > 0) {
+          question.options.forEach((option, optIndex) => {
+            const optionId = `q${index}o${optIndex}`;
+            const optionText =
+              typeof option === "object" ? option.text : option;
+            const optionId_val =
+              typeof option === "object" ? option.id : optionText;
+
+            questionHTML += `
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="${optionId}"
+                  name="question_${index}"
+                  value="${optionId_val}"
+                />
+                <label class="form-check-label" for="${optionId}">${optionText}</label>
+              </div>
+            `;
+          });
+        }
+      } else if (question.type === "text") {
+        questionHTML += `
+          <input
+            type="text"
+            class="form-control mt-3"
+            id="question_${index}"
+            placeholder="Type your answer"
+          />
+        `;
+      }
+
+      questionHTML += `</div>`;
+      questionDiv.innerHTML = questionHTML;
+      questionsContainer.appendChild(questionDiv);
+    });
+  }
+
+  // Handle form submission
   const submitBtn = document.querySelector(".submit-form-btn");
   if (submitBtn) {
     submitBtn.addEventListener("click", () => {
       const answers = collectFormAnswers();
-      const score = Math.floor(Math.random() * 100) + 1;
+
+      // Calculate score based on correct answers
+      const score = calculateScore(selectedForm, answers);
 
       const submissions =
         JSON.parse(localStorage.getItem(SUBMISSIONS_KEY)) || [];
@@ -216,8 +323,32 @@ function loadFormSubmission() {
       if (userIndex !== -1) {
         users[userIndex].submittedForms =
           (users[userIndex].submittedForms || 0) + 1;
-        users[userIndex].averageScore = score;
+
+        // Calculate average score
+        const allSubmissions = submissions.filter(
+          (s) => s.userId === currentUser.id
+        );
+        const avgScore = Math.round(
+          allSubmissions.reduce((sum, s) => sum + s.score, 0) /
+            allSubmissions.length
+        );
+        users[userIndex].averageScore = avgScore;
+
         localStorage.setItem(USERS_KEY, JSON.stringify(users));
+      }
+
+      // Update form average
+      const forms = JSON.parse(localStorage.getItem(FORMS_KEY)) || [];
+      const formIndex = forms.findIndex((f) => f.formId == selectedFormId);
+      if (formIndex !== -1) {
+        const formSubmissions = submissions.filter(
+          (s) => s.formId == selectedFormId
+        );
+        forms[formIndex].average = Math.round(
+          formSubmissions.reduce((sum, s) => sum + s.score, 0) /
+            formSubmissions.length
+        );
+        localStorage.setItem(FORMS_KEY, JSON.stringify(forms));
       }
 
       Swal.fire({
@@ -226,10 +357,52 @@ function loadFormSubmission() {
         icon: "success",
         confirmButtonText: "OK",
       }).then(() => {
+        localStorage.removeItem("selectedFormId");
         window.location.href = "userpage.html";
       });
     });
   }
+}
+
+function calculateScore(form, answers) {
+  let correctAnswers = 0;
+  let totalMarks = 0;
+
+  form.questions.forEach((question, index) => {
+    const questionKey = `question_${index}`;
+    totalMarks += question.mark || 1;
+
+    if (question.type === "radio") {
+      const userAnswer = answers[`question_${index}`];
+      if (userAnswer === question.correctAnswerId) {
+        correctAnswers += question.mark || 1;
+      }
+    } else if (question.type === "select") {
+      const userAnswers = answers[`question_${index}`] || [];
+      const correctIds = question.correctAnswerIds || [];
+
+      if (
+        Array.isArray(userAnswers) &&
+        userAnswers.length === correctIds.length
+      ) {
+        const allCorrect = userAnswers.every((ans) => correctIds.includes(ans));
+        if (allCorrect) {
+          correctAnswers += question.mark || 1;
+        }
+      }
+    } else if (question.type === "text") {
+      const userAnswer = answers[questionKey];
+      if (
+        userAnswer &&
+        userAnswer.toLowerCase().trim() ===
+          (question.correctAnswer || "").toLowerCase().trim()
+      ) {
+        correctAnswers += question.mark || 1;
+      }
+    }
+  });
+
+  return Math.round((correctAnswers / totalMarks) * 100);
 }
 
 function collectFormAnswers() {
@@ -239,15 +412,20 @@ function collectFormAnswers() {
     answers[input.name] = input.value;
   });
 
-  document.querySelectorAll('input[type="text"]').forEach((input) => {
-    if (input.value) answers[input.id] = input.value;
-  });
-
   document
     .querySelectorAll('input[type="checkbox"]:checked')
     .forEach((input) => {
-      answers[input.id] = true;
+      if (!answers[input.name]) {
+        answers[input.name] = [];
+      }
+      answers[input.name].push(input.value);
     });
+
+  document.querySelectorAll('input[type="text"]').forEach((input) => {
+    if (input.id && input.value) {
+      answers[input.id] = input.value;
+    }
+  });
 
   return answers;
 }
